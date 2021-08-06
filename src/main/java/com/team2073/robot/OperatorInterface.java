@@ -3,6 +3,7 @@ package com.team2073.robot;
 import com.team2073.robot.commands.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.POVButton;
 
 public class OperatorInterface {
 
@@ -15,6 +16,7 @@ public class OperatorInterface {
     private JoystickButton y = new JoystickButton(controller, 4);
     private JoystickButton lb = new JoystickButton(controller, 5);
     private JoystickButton rb = new JoystickButton(controller, 6);
+    private POVButton dPadUp = new POVButton(controller, 0);
 
     public void init() {
         a.whileHeld(new IntakeForward());
@@ -23,6 +25,7 @@ public class OperatorInterface {
         y.whileHeld(new IntermediateGo());
         lb.whenPressed(new HopperStop());
         rb.whenActive(new HopperIdle());
+        dPadUp.whileHeld(new ShootCommand());
     }
 
 }

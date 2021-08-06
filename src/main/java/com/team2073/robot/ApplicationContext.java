@@ -11,6 +11,7 @@ import com.revrobotics.CANSparkMax;
 import com.team2073.robot.subsystems.HopperSubsystem;
 import com.team2073.robot.subsystems.IntakeSubsystem;
 import com.team2073.robot.subsystems.IntermediateSubsystem;
+import com.team2073.robot.subsystems.ShooterSubsystem;
 import edu.wpi.first.wpilibj.DigitalInput;
 //import com.team2073.robot.statespace.ShooterVelocityCounter;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
@@ -78,7 +79,7 @@ public class ApplicationContext {
     private TalonFX elevatorMotor;
 
 //    private ShooterVelocityCounter velocityCounter;
-//    private FlywheelSubsystem flywheelSubsystem;
+    private ShooterSubsystem shooterSubsystem;
 
 
 
@@ -281,12 +282,12 @@ public class ApplicationContext {
 //        return velocityCounter;
 //    }
 //
-//    public FlywheelSubsystem getFlywheelSubsystem() {
-//        if(flywheelSubsystem == null){
-//            flywheelSubsystem = new FlywheelSubsystem();
-//        }
-//        return flywheelSubsystem;
-//    }
+    public ShooterSubsystem getFlywheelSubsystem() {
+        if(shooterSubsystem == null){
+            shooterSubsystem = new ShooterSubsystem();
+        }
+        return shooterSubsystem;
+    }
 
 
     public AnalogPotentiometer getPotentiometer() {
